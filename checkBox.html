@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckBox</title>
+</head>
+<body>
+    <form action="">
+        <input type="checkbox" name="CheckBox1" id="CheckBox1" checked>
+        <label for="CheckBox1">Opcija 1</label> <br>
+
+        <input type="checkbox" name="CheckBox2" id="CheckBox2">
+        <label for="CheckBox2">Opcija 2</label> <br>
+
+        <input type="checkbox" name="CheckBox3" id="CheckBox3">
+        <label for="CheckBox3">Opcija 3</label> <br>
+        <br>
+        <input type="button" value="Prikazi" onclick="Prikazi()">
+    </form>
+    <br>
+    <span id="Span1"></span>
+
+    <script>
+        function Prikazi() {
+            var cb1 = document.getElementById("CheckBox1");
+            var cb2 = document.getElementById("CheckBox2");
+            var cb3 = document.getElementById("CheckBox3");
+
+            var Span1 = document.getElementById("Span1");
+
+            var s = "";
+
+            if (!cb1.checked && !cb2.checked && !cb3.checked) {
+                s = "Niste odabrali ni jednu opciju";
+            } else {
+                s = "Odabrali ste sledece opcije: <br>"
+                if (cb1.checked) {
+                    s += "Opcija 1<br>";
+                }
+                if (cb2.checked) {
+                    s += "Opcija 2<br>";
+                }
+                if (cb3.checked) {
+                    s += "Opcija 3<br>";
+                }
+            }
+
+            Span1.innerHTML = s;
+        }
+    </script>
+</body>
+</html>
